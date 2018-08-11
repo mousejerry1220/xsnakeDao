@@ -36,10 +36,9 @@ import org.springframework.jdbc.core.SingleColumnRowMapper;
  *   queryPage              :  查询返回分页对象
  * 查询的返回值：
  *   查询得到结果集后可以把结果集封装为客户端想得到的类型，主要分为三种类型：
- *   1、如果查询只得到单个列，所有支持的类见：isSingleColumnClass方法,该方法参照：
- *   org.springframework.jdbc.support.JdbcUtils.getResultSetValue(ResultSet rs, int index, Class<?> requiredType)
+ *   1、如果查询只得到单个列，所有支持的类见：isSingleColumnClass方法
  *   2、用户可以根据返回的列名，创建自定义类。
- *   3、返回一个键值对的Map对象存放单条数据，一般如果泛型的Class<T>未传值，默认为第三种Map的方式
+ *   3、返回一个键值对的Map对象存放单条数据，一般如果泛型的Class未传值，默认为第三种Map的方式
  * 
  *
  */
