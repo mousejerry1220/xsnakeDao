@@ -204,7 +204,8 @@ public class DaoTemplate {
 			logger.debug("查询的SQL语句 ：[ " + sql + "] 参数为： [" + Arrays.toString(args) + "] 转换的类： [" + clazz.getName() + "]");
 		}
 		RowMapper<T> rowMapper = null;
-		if (String.class == clazz || Number.class.isAssignableFrom(clazz)) {
+		//if (String.class == clazz || Number.class.isAssignableFrom(clazz)) {
+		if(isSingleColumnClass(clazz)){
 			rowMapper = new SingleColumnRowMapper<T>(clazz);
 		}else{
 			rowMapper = new BeanPropertyRowMapper<T>(clazz);
